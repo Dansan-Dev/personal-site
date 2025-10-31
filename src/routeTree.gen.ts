@@ -11,7 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ResumeRouteImport } from './routes/resume'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
-import { Route as GameDevRouteImport } from './routes/game-dev'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ResumeRoute = ResumeRouteImport.update({
@@ -24,11 +23,6 @@ const PortfolioRoute = PortfolioRouteImport.update({
   path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GameDevRoute = GameDevRouteImport.update({
-  id: '/game-dev',
-  path: '/game-dev',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,34 +31,30 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/game-dev': typeof GameDevRoute
   '/portfolio': typeof PortfolioRoute
   '/resume': typeof ResumeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/game-dev': typeof GameDevRoute
   '/portfolio': typeof PortfolioRoute
   '/resume': typeof ResumeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/game-dev': typeof GameDevRoute
   '/portfolio': typeof PortfolioRoute
   '/resume': typeof ResumeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/game-dev' | '/portfolio' | '/resume'
+  fullPaths: '/' | '/portfolio' | '/resume'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/game-dev' | '/portfolio' | '/resume'
-  id: '__root__' | '/' | '/game-dev' | '/portfolio' | '/resume'
+  to: '/' | '/portfolio' | '/resume'
+  id: '__root__' | '/' | '/portfolio' | '/resume'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  GameDevRoute: typeof GameDevRoute
   PortfolioRoute: typeof PortfolioRoute
   ResumeRoute: typeof ResumeRoute
 }
@@ -85,13 +75,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/game-dev': {
-      id: '/game-dev'
-      path: '/game-dev'
-      fullPath: '/game-dev'
-      preLoaderRoute: typeof GameDevRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/': {
       id: '/'
       path: '/'
@@ -104,7 +87,6 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  GameDevRoute: GameDevRoute,
   PortfolioRoute: PortfolioRoute,
   ResumeRoute: ResumeRoute,
 }

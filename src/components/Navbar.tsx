@@ -2,22 +2,15 @@ import { Link } from '@tanstack/react-router'
 
 export function Navbar() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/resume">Resume</Link>
-        </li>
-        <li>
-          <Link to="/portfolio">Portfolio</Link>
-        </li>
-        <li>
-          <Link to="/game-dev">Game Development</Link>
-        </li>
-      </ul>
-    </nav>
+    <div className="navbar-wrap">
+      <nav className="navbar" aria-label="Primary Navigation">
+        <span className="brand" aria-hidden="true" />
+        <Link to="/">Home</Link>
+        <Link to="/resume">Resume</Link>
+        <Link to="/portfolio">Portfolio</Link>
+        <a href="https://example.com" target="_blank" rel="noreferrer">Game Development</a>
+      </nav>
+    </div>
   )
 }
 

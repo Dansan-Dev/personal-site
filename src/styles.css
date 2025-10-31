@@ -19,10 +19,11 @@ body {
   color: var(--text-light);
   background: linear-gradient(
     to bottom,
-    var(--color-main) 40%,
-    var(--color-teal) 25%,
-    var(--color-blue-1) 20%,
-    var(--color-blue-2) 15%
+    /* Four colors only; adjust where each ends (smaller green) */
+    var(--color-main) 8%,
+    var(--color-teal) 28%,
+    var(--color-blue-1) 60%,
+    var(--color-blue-2) 100%
   );
   background-attachment: fixed;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
@@ -32,6 +33,12 @@ body {
   max-width: 1100px;
   margin: 0 auto;
   padding: 96px 16px 32px; /* top padding leaves space for fixed navbar */
+}
+
+/* Full-width container for Home */
+.home-full {
+  width: 100%;
+  padding: 96px 16px 32px; /* match page-container top spacing */
 }
 
 /* Navbar */
@@ -90,13 +97,26 @@ body {
 /* Home */
 .home-grid {
   display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 28px;
+  grid-template-columns: 1fr 1fr; /* two equal halves spanning full width */
+  column-gap: 0; /* remove horizontal spacing between halves */
+  align-items: center; /* vertically center text and carousel */
+  min-height: calc(100vh - 140px);
+  justify-items: center; /* center content within each half on the x-axis */
 }
 
-.home-title { margin: 0 0 8px; font-size: 42px; line-height: 1.1; }
-.home-subtitle { margin: 0 0 16px; font-size: 20px; color: var(--text-dim); }
-.home-desc { margin: 0; font-size: 16px; line-height: 1.7; color: #eaf7f3; }
+.home-title { margin: 0 0 10px; font-size: 56px; line-height: 1.08; text-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+.home-subtitle { margin: 0 0 18px; font-size: 28px; color: var(--text-light); opacity: 0.95; text-shadow: 0 2px 8px rgba(0,0,0,0.22); }
+.home-desc { margin: 4px 0 0; font-size: 19px; line-height: 1.9; color: #ffffff; text-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+
+.home-text { 
+  background: rgba(8, 16, 28, 0.35);
+  border: 1px solid var(--border-dark);
+  border-radius: 16px;
+  padding: 22px 22px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  width: 100%;
+  max-width: 640px; /* keep readable measure while centered */
+}
 
 /* Carousel */
 .carousel {
@@ -105,8 +125,10 @@ body {
   overflow: hidden;
   border: 1px solid var(--border-dark);
   background: rgba(12, 20, 32, 0.4);
+  width: 560px;
+  max-width: 100%;
 }
-.carousel img { width: 100%; display: block; height: 360px; object-fit: cover; }
+.carousel img { width: 100%; display: block; height: 520px; object-fit: cover; }
 .carousel-dots { position: absolute; left: 0; right: 0; bottom: 10px; display: flex; justify-content: center; gap: 8px; }
 .carousel-dot { width: 8px; height: 8px; border-radius: 999px; background: rgba(255,255,255,0.35); border: 1px solid var(--border-dark); }
 .carousel-dot.active { background: var(--color-main); }
