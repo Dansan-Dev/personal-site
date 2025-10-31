@@ -7,7 +7,6 @@ export function Navbar() {
   return (
     <div className="navbar-wrap">
       <nav className="navbar" aria-label="Primary Navigation">
-        <span className="brand" aria-hidden="true" />
         <Link to="/" className={currentPath === '/' ? 'active' : ''}>Home</Link>
         <Link to="/cv" className={currentPath === '/cv' ? 'active' : ''}>CV</Link>
         <Link to="/portfolio" className={currentPath === '/portfolio' ? 'active' : ''}>Portfolio</Link>
