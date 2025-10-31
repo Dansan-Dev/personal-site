@@ -147,17 +147,40 @@ body {
 .bubble-bg { position: absolute; width: var(--bubble-bg-radius, 0px); height: var(--bubble-bg-radius, 0px); background: var(--bubble-bg-color, transparent); border-radius: 999px; left: calc(50% + var(--bubble-bg-offset-x, 0px)); top: calc(50% + var(--bubble-bg-offset-y, 0px)); transform: translate(-50%, -50%); pointer-events: none; filter: blur(6px); opacity: 0.9; }
 
 /* Portfolio */
-.portfolio-layout { display: grid; grid-template-columns: 260px 1fr; gap: 24px; }
+.portfolio-layout { display: grid; grid-template-columns: 280px 1fr; gap: 24px; }
 .aside {
   position: sticky; top: 88px; align-self: start;
   background: rgba(12,20,32,0.5); border: 1px solid var(--border-dark); border-radius: 12px; padding: 16px;
 }
+.aside h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.filter-category {
+  margin-bottom: 20px;
+}
+.filter-category:last-child {
+  margin-bottom: 0;
+}
+.filter-category-title {
+  margin: 0 0 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 .filter-tags { display: flex; flex-wrap: wrap; gap: 10px; }
 .tag { padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border-dark); background: rgba(255,255,255,0.06); color: var(--text-dim); cursor: pointer; }
 .tag.active { background: var(--color-teal); color: #082825; border-color: transparent; }
-.projects { display: grid; grid-template-columns: 1fr; gap: 16px; }
+.projects { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: start; grid-auto-rows: 90px; }
 .project {
   background: rgba(12,20,32,0.5); border: 1px solid var(--border-dark); border-radius: 12px; padding: 16px;
+  height: 90px; /* fixed height */
+  overflow: hidden;
 }
 .project h3 { margin: 0 0 6px; }
 .project p { margin: 0; color: var(--text-dim); }

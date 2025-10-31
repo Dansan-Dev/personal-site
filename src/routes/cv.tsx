@@ -2,10 +2,10 @@ import { createFileRoute } from '@tanstack/react-router'
 import { useMemo, useState } from 'react'
 
 export const Route = createFileRoute('/cv')({
-  component: ResumePage,
+  component: CVPage,
 })
 
-function ResumePage() {
+function CVPage() {
   const [open, setOpen] = useState(false)
   const [lang, setLang] = useState<'en' | 'se'>('en')
 

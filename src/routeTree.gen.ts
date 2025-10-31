@@ -12,6 +12,12 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as CvRouteImport } from './routes/cv'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectResume_builderRouteImport } from './routes/project/resume_builder'
+import { Route as ProjectPersonal_websiteRouteImport } from './routes/project/personal_website'
+import { Route as ProjectNova_bankRouteImport } from './routes/project/nova_bank'
+import { Route as ProjectKafka_upskillingRouteImport } from './routes/project/kafka_upskilling'
+import { Route as ProjectAi_assessmentRouteImport } from './routes/project/ai_assessment'
+import { Route as ProjectIdRouteImport } from './routes/project.$id'
 
 const PortfolioRoute = PortfolioRouteImport.update({
   id: '/portfolio',
@@ -28,35 +34,117 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectResume_builderRoute = ProjectResume_builderRouteImport.update({
+  id: '/project/resume_builder',
+  path: '/project/resume_builder',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectPersonal_websiteRoute = ProjectPersonal_websiteRouteImport.update({
+  id: '/project/personal_website',
+  path: '/project/personal_website',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectNova_bankRoute = ProjectNova_bankRouteImport.update({
+  id: '/project/nova_bank',
+  path: '/project/nova_bank',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectKafka_upskillingRoute = ProjectKafka_upskillingRouteImport.update({
+  id: '/project/kafka_upskilling',
+  path: '/project/kafka_upskilling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectAi_assessmentRoute = ProjectAi_assessmentRouteImport.update({
+  id: '/project/ai_assessment',
+  path: '/project/ai_assessment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectIdRoute = ProjectIdRouteImport.update({
+  id: '/project/$id',
+  path: '/project/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
   '/portfolio': typeof PortfolioRoute
+  '/project/$id': typeof ProjectIdRoute
+  '/project/ai_assessment': typeof ProjectAi_assessmentRoute
+  '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
+  '/project/nova_bank': typeof ProjectNova_bankRoute
+  '/project/personal_website': typeof ProjectPersonal_websiteRoute
+  '/project/resume_builder': typeof ProjectResume_builderRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
   '/portfolio': typeof PortfolioRoute
+  '/project/$id': typeof ProjectIdRoute
+  '/project/ai_assessment': typeof ProjectAi_assessmentRoute
+  '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
+  '/project/nova_bank': typeof ProjectNova_bankRoute
+  '/project/personal_website': typeof ProjectPersonal_websiteRoute
+  '/project/resume_builder': typeof ProjectResume_builderRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cv': typeof CvRoute
   '/portfolio': typeof PortfolioRoute
+  '/project/$id': typeof ProjectIdRoute
+  '/project/ai_assessment': typeof ProjectAi_assessmentRoute
+  '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
+  '/project/nova_bank': typeof ProjectNova_bankRoute
+  '/project/personal_website': typeof ProjectPersonal_websiteRoute
+  '/project/resume_builder': typeof ProjectResume_builderRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cv' | '/portfolio'
+  fullPaths:
+    | '/'
+    | '/cv'
+    | '/portfolio'
+    | '/project/$id'
+    | '/project/ai_assessment'
+    | '/project/kafka_upskilling'
+    | '/project/nova_bank'
+    | '/project/personal_website'
+    | '/project/resume_builder'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cv' | '/portfolio'
-  id: '__root__' | '/' | '/cv' | '/portfolio'
+  to:
+    | '/'
+    | '/cv'
+    | '/portfolio'
+    | '/project/$id'
+    | '/project/ai_assessment'
+    | '/project/kafka_upskilling'
+    | '/project/nova_bank'
+    | '/project/personal_website'
+    | '/project/resume_builder'
+  id:
+    | '__root__'
+    | '/'
+    | '/cv'
+    | '/portfolio'
+    | '/project/$id'
+    | '/project/ai_assessment'
+    | '/project/kafka_upskilling'
+    | '/project/nova_bank'
+    | '/project/personal_website'
+    | '/project/resume_builder'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CvRoute: typeof CvRoute
   PortfolioRoute: typeof PortfolioRoute
+  ProjectIdRoute: typeof ProjectIdRoute
+  ProjectAi_assessmentRoute: typeof ProjectAi_assessmentRoute
+  ProjectKafka_upskillingRoute: typeof ProjectKafka_upskillingRoute
+  ProjectNova_bankRoute: typeof ProjectNova_bankRoute
+  ProjectPersonal_websiteRoute: typeof ProjectPersonal_websiteRoute
+  ProjectResume_builderRoute: typeof ProjectResume_builderRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +170,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/project/resume_builder': {
+      id: '/project/resume_builder'
+      path: '/project/resume_builder'
+      fullPath: '/project/resume_builder'
+      preLoaderRoute: typeof ProjectResume_builderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/personal_website': {
+      id: '/project/personal_website'
+      path: '/project/personal_website'
+      fullPath: '/project/personal_website'
+      preLoaderRoute: typeof ProjectPersonal_websiteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/nova_bank': {
+      id: '/project/nova_bank'
+      path: '/project/nova_bank'
+      fullPath: '/project/nova_bank'
+      preLoaderRoute: typeof ProjectNova_bankRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/kafka_upskilling': {
+      id: '/project/kafka_upskilling'
+      path: '/project/kafka_upskilling'
+      fullPath: '/project/kafka_upskilling'
+      preLoaderRoute: typeof ProjectKafka_upskillingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/ai_assessment': {
+      id: '/project/ai_assessment'
+      path: '/project/ai_assessment'
+      fullPath: '/project/ai_assessment'
+      preLoaderRoute: typeof ProjectAi_assessmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/$id': {
+      id: '/project/$id'
+      path: '/project/$id'
+      fullPath: '/project/$id'
+      preLoaderRoute: typeof ProjectIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +219,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CvRoute: CvRoute,
   PortfolioRoute: PortfolioRoute,
+  ProjectIdRoute: ProjectIdRoute,
+  ProjectAi_assessmentRoute: ProjectAi_assessmentRoute,
+  ProjectKafka_upskillingRoute: ProjectKafka_upskillingRoute,
+  ProjectNova_bankRoute: ProjectNova_bankRoute,
+  ProjectPersonal_websiteRoute: ProjectPersonal_websiteRoute,
+  ProjectResume_builderRoute: ProjectResume_builderRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
