@@ -16,7 +16,7 @@ export function Navbar() {
             ? 'active' 
             : ''
           }>Portfolio</Link>
-        <a href="https://example.com" target="_blank" rel="noreferrer">Game Development</a>
+        <a target="_blank" rel="noreferrer" className='cursor-not-allowed select-none'>Game Development</a>
       </nav>
     </div>
   )
