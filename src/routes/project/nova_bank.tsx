@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Project from '@/components/Project'
+import BackButton from '@/components/BackButton'
 
 export const Route = createFileRoute('/project/nova_bank')({
   component: RouteComponent,
@@ -7,6 +8,7 @@ export const Route = createFileRoute('/project/nova_bank')({
 
 function RouteComponent() {
   return <div>
+    <BackButton to="/portfolio" label="Back" />
     <Project
       name="Nova Bank Platform"
       description="Final project of the 13-week Java Fullstack Program at SALT. A banking solution for a fictional customer with business and functional requirements — secure, scalable, user-friendly, and innovative."

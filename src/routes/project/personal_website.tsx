@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Project from '@/components/Project'
+import BackButton from '@/components/BackButton'
 
 export const Route = createFileRoute('/project/personal_website')({
   component: RouteComponent,
@@ -7,6 +8,7 @@ export const Route = createFileRoute('/project/personal_website')({
 
 function RouteComponent() {
   return <div>
+    <BackButton to="/portfolio" label="Back" />
     <Project
       name="Personal Website"
       description="Portfolio + blog with animated hero, filterable projects, and a CSS-variables theme."

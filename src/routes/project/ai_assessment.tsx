@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import Project from '@/components/Project'
+import BackButton from '@/components/BackButton'
 
 export const Route = createFileRoute('/project/ai_assessment')({
   component: RouteComponent,
@@ -7,6 +8,7 @@ export const Route = createFileRoute('/project/ai_assessment')({
 
 function RouteComponent() {
   return <div>
+    <BackButton to="/portfolio" label="Back" />
     <Project
       name="AI Assessment App"
       description="An app responsible for managing forms for assessing AI Maturity — including a form creator, notifications, and handling links to fillable forms."
