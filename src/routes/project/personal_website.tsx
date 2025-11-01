@@ -19,7 +19,7 @@ function RouteComponent() {
         'Theming via CSS variables layered over Tailwind',
         'Simple CI build & static hosting',
       ]}
-      links={{ github: 'https://github.com/yourname/personal-website' }}
+      links={{ github: 'https://github.com/Dansan-Dev/personal-marketing-server' }}
     />
   </div>
 }
