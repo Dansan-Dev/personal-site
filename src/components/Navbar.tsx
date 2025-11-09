@@ -4,8 +4,6 @@ export function Navbar() {
   const router = useRouterState()
   const currentPath = router.location.pathname
 
-  const isCurrent = (path: string) => currentPath.startsWith(path)
-
   return (
     <div className="navbar-wrap">
       <nav className="navbar" aria-label="Primary Navigation">
@@ -16,7 +14,7 @@ export function Navbar() {
             ? 'active' 
             : ''
           }>Portfolio</Link>
-        <a target="_blank" rel="noreferrer" className='cursor-not-allowed select-none'>Game Development</a>
+        <a target="_blank" rel="noreferrer" className='cursor-not-allowed select-none'>Games</a>
       </nav>
     </div>
   )

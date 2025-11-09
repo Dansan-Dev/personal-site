@@ -106,6 +106,8 @@
 
   /*---- SIZE ----*/
 
+  --carousel-width: 560px;
+
   --bubble-size: 36px;
   --bubble-bg-radius: 0px;
 
@@ -169,6 +171,8 @@ body {
   padding: 8px 14px;
   border-radius: 999px;
   transition: color 120ms ease, background-color 120ms ease, box-shadow 120ms ease;
+  min-width: 80px;
+  text-align: center;
 }
 
 .navbar a:hover {
@@ -231,7 +235,7 @@ body {
   overflow: hidden;
   border: 1px solid var(--color-border-dark);
   background: var(--color-carousel-background);
-  width: 560px;
+  width: var(--carousel-width);
   max-width: 100%;
 }
 
@@ -306,20 +310,33 @@ body {
 
 /* Portfolio */
 .portfolio-layout {
-  display: grid;
+  /*display: grid;
   grid-template-columns: 280px 1fr;
-  gap: 24px;
+  gap: 24px;*/
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
 }
 
 .aside {
   /* FILTER */
-  position: sticky;
+  /*position: sticky;
   top: 88px;
   align-self: start;
   background: var(--color-filter-background);
   border: 1px solid var(--color-border-dark);
   border-radius: 12px;
+  padding: 16px;*/
+  position: fixed;
+  top: 100px;           /* adjust to clear your navbar */
+  left: 40px;           /* distance from viewport edge */
+  width: 260px;
+  background: var(--color-filter-background);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 12px;
   padding: 16px;
+  z-index: 10;
 }
 .aside h3 {
   text-align: center;
@@ -384,6 +401,7 @@ body {
   padding: 16px;
   height: 90px; /* fixed height */
   overflow: hidden;
+  max-width: 680px;
 }
 
 .project:hover {
@@ -522,7 +540,36 @@ body {
   .carousel { width: 420px; height: 420px; }
   .carousel img { width: 420px; height: 420px; }
 
-  .aside { position: static; }
+  .portfolio-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .aside {
+    position: static;
+    width: 660px;
+  }
+
+  .project {
+    width: 660px;
+  }
+
+  .filter-category-title {
+    text-align: center;
+  }
+
+  .filter-tags {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .filter-tag {
+    width: 200px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -579,7 +626,19 @@ body {
 
 /* 1024px is the breakpoint for portfolio card heights*/
 @media (max-width: 800px) {
-  
+  .filter-tags {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 2fr));
+  }
+
+  .filter-tag {
+    width: 160px;
+    font-size: 14px;
+  }
+
+  .filter-tag-title {
+    font-size: 12px;
+  }
+
   .projects {
     grid-template-columns: 1fr;
   }
@@ -592,6 +651,63 @@ body {
 
 /* 640px is the breakpoint for mobile layout*/
 @media (max-width: 640px) {
+
+  .projects {
+    gap: 50px;
+    margin-bottom: 18px;
+  }
+
+  .project {
+    width: 310px;
+    height: 130px;
+  }
+
+  .project h3 {
+    font-size: 15px;
+  }
+
+  .project p {
+    font-size: 15px;
+  }
+
+  .aside {
+    position: static;
+    width: 310px;
+  }
+
+  /*--------------------------------*/
+  .body {
+    height: 100%;
+    width: 100%;
+  }
+
+  .home-full {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0 0 0;
+  }
+
+  .home-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .carousel {
+    scale: 0.85;
+  }
+
+  .home-text {
+    width: calc(360px * 0.85);
+  }
+
+  .home-title { font-size: 28px; margin-bottom: 6px; }
+  .home-subtitle { font-size: 16px; margin-bottom: 10px}
+  .home-desc { font-size: 12px; }
+
+  /*--------------------------------*/
 
   .navbar-wrap {
     top: 0;              /* dock to very top */
