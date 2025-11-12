@@ -14,7 +14,7 @@ function CVPage() {
   ), [lang])
 
   return (
-    <div className="page-container">
+    <div className="page-container cv-page-container">
       <div className="resume-frame">
         <div className='resume-options-bar'>
           <div className="filter-tags">
@@ -31,9 +31,17 @@ function CVPage() {
               Svenska
             </button>
           </div>
-          <a className="btn" href={resumeUrl} download>
-            Download PDF
-          </a>
+          {
+            matchMedia('(max-width: 640px)').matches
+              ? <div className="mobile-download-btn">
+                  <a className="btn" href={resumeUrl} download>
+                    <img className="btn-icon" src="download_icon.png" alt=""/>
+                  </a>
+                </div>
+              : <a className="btn" href={resumeUrl} download>
+                  Download PDF <img className="btn-icon" src="download_icon.png" alt=""/>
+                </a>
+          }
         </div>
         <iframe
           className="resume-embed"

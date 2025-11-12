@@ -655,7 +655,6 @@ body {
   /* Lock viewport and prevent scroll on mobile */
   html, body {
     height: 100vh;
-    overflow: hidden;
   }
 
   .projects {
@@ -854,6 +853,16 @@ body {
 
   /*--------------------------------*/
 
+  .page-container.cv-page-container {
+    padding: 0;
+    margin: 0;
+    height: calc(100vh - var(--nav-h));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* vertical centering */
+    align-items: center;           /* horizontal centering */
+  }
+
   .resume-options-bar {
     display: flex;
     gap: 12px;
@@ -861,9 +870,28 @@ body {
     justify-content: center;
   }
 
+  .filter-tags {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .resume-options-bar .filter-tag {
+    width: 100px;
+  }
+
+  .resume-options-bar .btn {
+    padding: 8px;
+  }
+
+  .btn-icon {
+    filter: brightness(0) invert(1);
+    width: 20px;
+    height: 20px;
+  }
+
 
   .page-container {
-    padding: 110px 0 35px 0;
+    padding: 10px 0 35px 0;
   }
 
   .resume-frame {
