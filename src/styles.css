@@ -273,8 +273,8 @@ body {
 
 .bubble {
   position: relative;
-  width: var(--bubble-size);
-  height: var(--bubble-size);
+  width: var(--bubble-size, var(--bubble-size-default, 36px));
+  height: var(--bubble-size, var(--bubble-size-default, 36px));
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -289,8 +289,8 @@ body {
 }
 
 .bubble img {
-  width: calc(var(--bubble-size) - 6px);
-  height: calc(var(--bubble-size) - 6px);
+  width: calc(var(--bubble-size, var(--bubble-size-default, 36px)) - 6px);
+  height: calc(var(--bubble-size, var(--bubble-size-default, 36px)) - 6px);
   object-fit: contain;
 }
 
@@ -652,6 +652,17 @@ body {
 /* 640px is the breakpoint for mobile layout*/
 @media (max-width: 640px) {
 
+  :root {
+    --nav-h: 64px;
+    --bubble-size: 32px;
+  }
+
+  /* Lock viewport and prevent scroll on mobile */
+  html, body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
   .projects {
     gap: 50px;
     margin-bottom: 18px;
@@ -682,34 +693,70 @@ body {
   }
 
   .home-full {
-    height: 100%;
+    height: calc(100vh - var(--nav-h));
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 50px 0 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
   }
 
   .home-grid {
+    width: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
+    align-items: center; /* center items to avoid side cutoffs */
+    gap: 0;
+    box-sizing: border-box;
+  }
+
+  .carousel-container {
+    margin: 8px 0 0 0; /* space below carousel */
+    height: auto; /* let content define height */
+    display: flex; /* center the carousel */
+    justify-content: center;
+    width: 100%;
   }
 
   .carousel {
-    scale: 0.85;
+    margin-top: 0;
+    /* Smaller and capped by viewport height to fit with text and navbar */
+    width: min(84vw, 320px, 44vh);
+    height: min(84vw, 320px, 44vh);
+    max-width: 100%;
+    aspect-ratio: 1 / 1; /* square carousel to avoid layout shifts */
+  }
+
+  .carousel img {
+    width: 100%;
+    height: 100%; /* fill the aspect-ratio box */
+    object-fit: cover;
   }
 
   .home-text {
-    width: calc(360px * 0.85);
+    width: min(84vw, 320px, 44vh); /* match carousel width */
+    padding: 18px;
+    max-width: 100%;
+    margin-top: 8px; /* ensure separation */
   }
 
   .home-title { font-size: 28px; margin-bottom: 6px; }
   .home-subtitle { font-size: 16px; margin-bottom: 10px}
   .home-desc { font-size: 12px; }
 
+  .bubble {
+    width: var(--bubble-size, var(--bubble-size-default, 36px));
+    height: var(--bubble-size, var(--bubble-size-default, 36px));
+  }
+
   /*--------------------------------*/
 
   .navbar-wrap {
+    position: sticky;
     top: 0;              /* dock to very top */
     left: 0;
     right: 0;
@@ -720,7 +767,11 @@ body {
     width: 100%;
     max-width: none;
     border-radius: 0;    /* square bar */
-    padding: calc(12px + env(safe-area-inset-top)) 16px 12px;
+    height: var(--nav-h);
+    padding: 0 12px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
     background: var(--color-media-navbar-background);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -728,12 +779,13 @@ body {
     border-right: 0;
     border-top: 0;
     border-bottom: 1px solid black;
-    gap: 10px;
+    gap: 2px;
     justify-content: space-between;
   }
 
   /* Make links feel like mobile buttons */
   .navbar a {
+    font-size: 14px;
     flex: 1 1 0;          /* spread edge-to-edge */
     text-align: center;
     padding: 12px 8px;    /* ≥44px touch height incl. line-height */

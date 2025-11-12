@@ -18,7 +18,7 @@ type SocialBubblesProps = {
 
 export function SocialBubbles({ size = 36, bg, links }: SocialBubblesProps) {
   const styleVars: (React.CSSProperties & Record<string, string>) = {
-    ['--bubble-size']: `${size}px`,
+    ['--bubble-size-default']: `${size}px`,
   }
   if (bg?.radius) styleVars['--bubble-bg-radius'] = `${bg.radius}px`
   if (bg?.color) styleVars['--bubble-bg-color'] = bg.color
