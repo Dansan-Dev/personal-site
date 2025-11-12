@@ -448,6 +448,16 @@ body {
   border-color: var(--color-download-button-hover-border);
 }
 
+.btn-icon {
+  filter: brightness(0) invert(1);
+  width: 20px;
+  height: 20px;
+}
+
+.btn-icon:hover {
+  fill: black;
+}
+
 .resume-options-bar {
   display: flex;
   gap: 12px;
@@ -743,8 +753,8 @@ body {
   .home-desc { font-size: 12px; }
 
   .bubble {
-    width: var(--bubble-size, var(--bubble-size-default, 36px));
-    height: var(--bubble-size, var(--bubble-size-default, 36px));
+    width: var(--bubble-size);
+    height: var(--bubble-size);
   }
 
   /*--------------------------------*/
@@ -882,13 +892,6 @@ body {
   .resume-options-bar .btn {
     padding: 8px;
   }
-
-  .btn-icon {
-    filter: brightness(0) invert(1);
-    width: 20px;
-    height: 20px;
-  }
-
 
   .page-container {
     padding: 10px 0 35px 0;

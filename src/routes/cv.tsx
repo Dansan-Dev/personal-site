@@ -31,18 +31,10 @@ function CVPage() {
               Svenska
             </button>
           </div>
-          {
-            matchMedia('(max-width: 640px)').matches
-              ? <div className="mobile-download-btn">
-                  <a className="btn" href={resumeUrl} download>
-                    <img className="btn-icon" src="download_icon.png" alt=""/>
-                  </a>
-                </div>
-              : <a className="btn" href={resumeUrl} download>
-                  Download PDF <img className="btn-icon" src="download_icon.png" alt=""/>
-                </a>
-          }
-        </div>
+            <a className="btn" href={resumeUrl} download>
+              <img className="btn-icon" src="download_icon.svg" alt=""/>
+            </a>
+          </div>
         <iframe
           className="resume-embed"
           src={resumeUrl}
