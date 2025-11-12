@@ -30,11 +30,10 @@ function App() {
           <h2 className="home-subtitle">{title}</h2>
           <p className="home-desc">{description}</p>
           <SocialBubbles
-            size={48}
             links={[
-              { title: 'LinkedIn', href: 'https://www.linkedin.com/in/daniel-sandstr%C3%B6m-449874316/', iconSrc: '/linkedin_icon.svg', bgColor: '#ffffff' },
-              { title: 'GitHub', href: 'https://github.com/Dansan-Dev', iconSrc: '/github-mark.png', bgColor: '#ffffff'},
-              { title: 'Email', href: 'mailto:work@danielsandstrom.org', iconSrc: '/mail_icon.svg', bgColor: '#ffffff' },
+              { title: 'LinkedIn', href: 'https://www.linkedin.com/in/daniel-sandstr%C3%B6m-449874316/', iconSrc: '/linkedin_icon.svg' },
+              { title: 'GitHub', href: 'https://github.com/Dansan-Dev', iconSrc: '/github-mark.png'},
+              { title: 'Email', href: 'mailto:work@danielsandstrom.org', iconSrc: '/mail_icon.svg' },
             ]}
           />
         </section>

@@ -76,8 +76,8 @@
   --color-carousel-background: rgba(12, 20, 32, 0.4);
   --color-carousel-dot-background: rgba(255,255,255,0.35);
 
+  --color-bubble-bg: #ffffff;
   --color-bubble-background: rgba(255,255,255,0.06);
-  --color-bubble-hover-background: rgba(255,255,255,0.12);
   --color-bubble-bg-background: transparent;
 
   --color-filter-background: rgba(12,20,32,0.5);
@@ -108,7 +108,7 @@
 
   --carousel-width: 560px;
 
-  --bubble-size: 36px;
+  --bubble-size: 48px;
   --bubble-bg-radius: 0px;
 
   /*---- POSITION ----*/
@@ -273,24 +273,20 @@ body {
 
 .bubble {
   position: relative;
-  width: var(--bubble-size, var(--bubble-size-default, 36px));
-  height: var(--bubble-size, var(--bubble-size-default, 36px));
+  width: var(--bubble-size);
+  height: var(--bubble-size);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  background: var(--color-bubble-background);
+  background: var(--color-bubble-bg);
   border: 1px solid var(--color-border-dark);
   overflow: hidden;
 }
 
-.bubble:hover {
-  background: var(--color-bubble-hover-background);
-}
-
 .bubble img {
-  width: calc(var(--bubble-size, var(--bubble-size-default, 36px)) - 6px);
-  height: calc(var(--bubble-size, var(--bubble-size-default, 36px)) - 6px);
+  width: calc(var(--bubble-size) - 6px);
+  height: calc(var(--bubble-size) - 6px);
   object-fit: contain;
 }
 
@@ -298,7 +294,6 @@ body {
   position: absolute;
   width: var(--bubble-bg-radius);
   height: var(--bubble-bg-radius);
-  background: var(--color-bubble-bg-background);
   border-radius: 999px;
   left: calc(50% + var(--bubble-bg-offset-x, 0px));
   top: calc(50% + var(--bubble-bg-offset-y, 0px));
