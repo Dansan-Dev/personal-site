@@ -28,7 +28,7 @@ function CVPage() {
               className={`filter-tag cv-language-selector ${lang === 'se' ? 'active' : ''}`}
               onClick={() => setLang('se')}
             >
-              Svenska
+              Swedish
             </button>
           </div>
             <a className="btn" href={resumeUrl} download>
