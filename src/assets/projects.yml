@@ -89,9 +89,9 @@ projects:
       - "Cloudflare"
   - id: 6
     client: "Witnium"
-    title: "Testing & Health Project"
-    path: "testing_health"
-    desc: "Implemented tests & health dashboard for Chattrick products."
+    title: "Chattrick Testing & Health Dashboard"
+    path: "chattrick"
+    desc: "Implemented tests & health dashboard for Chattrick services."
     tags:
       - "Backend"
       - "Frontend"

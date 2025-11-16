@@ -12,11 +12,11 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as CvRouteImport } from './routes/cv'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ProjectTesting_healthRouteImport } from './routes/project/testing_health'
 import { Route as ProjectResume_builderRouteImport } from './routes/project/resume_builder'
 import { Route as ProjectPersonal_websiteRouteImport } from './routes/project/personal_website'
 import { Route as ProjectNova_bankRouteImport } from './routes/project/nova_bank'
 import { Route as ProjectKafka_upskillingRouteImport } from './routes/project/kafka_upskilling'
+import { Route as ProjectChattrickRouteImport } from './routes/project/chattrick'
 import { Route as ProjectAi_assessmentRouteImport } from './routes/project/ai_assessment'
 import { Route as ProjectIdRouteImport } from './routes/project.$id'
 
@@ -33,11 +33,6 @@ const CvRoute = CvRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProjectTesting_healthRoute = ProjectTesting_healthRouteImport.update({
-  id: '/project/testing_health',
-  path: '/project/testing_health',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectResume_builderRoute = ProjectResume_builderRouteImport.update({
@@ -60,6 +55,11 @@ const ProjectKafka_upskillingRoute = ProjectKafka_upskillingRouteImport.update({
   path: '/project/kafka_upskilling',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectChattrickRoute = ProjectChattrickRouteImport.update({
+  id: '/project/chattrick',
+  path: '/project/chattrick',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectAi_assessmentRoute = ProjectAi_assessmentRouteImport.update({
   id: '/project/ai_assessment',
   path: '/project/ai_assessment',
@@ -77,11 +77,11 @@ export interface FileRoutesByFullPath {
   '/portfolio': typeof PortfolioRoute
   '/project/$id': typeof ProjectIdRoute
   '/project/ai_assessment': typeof ProjectAi_assessmentRoute
+  '/project/chattrick': typeof ProjectChattrickRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
-  '/project/testing_health': typeof ProjectTesting_healthRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -89,11 +89,11 @@ export interface FileRoutesByTo {
   '/portfolio': typeof PortfolioRoute
   '/project/$id': typeof ProjectIdRoute
   '/project/ai_assessment': typeof ProjectAi_assessmentRoute
+  '/project/chattrick': typeof ProjectChattrickRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
-  '/project/testing_health': typeof ProjectTesting_healthRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -102,11 +102,11 @@ export interface FileRoutesById {
   '/portfolio': typeof PortfolioRoute
   '/project/$id': typeof ProjectIdRoute
   '/project/ai_assessment': typeof ProjectAi_assessmentRoute
+  '/project/chattrick': typeof ProjectChattrickRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
-  '/project/testing_health': typeof ProjectTesting_healthRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -116,11 +116,11 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/project/$id'
     | '/project/ai_assessment'
+    | '/project/chattrick'
     | '/project/kafka_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
-    | '/project/testing_health'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -128,11 +128,11 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/project/$id'
     | '/project/ai_assessment'
+    | '/project/chattrick'
     | '/project/kafka_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
-    | '/project/testing_health'
   id:
     | '__root__'
     | '/'
@@ -140,11 +140,11 @@ export interface FileRouteTypes {
     | '/portfolio'
     | '/project/$id'
     | '/project/ai_assessment'
+    | '/project/chattrick'
     | '/project/kafka_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
-    | '/project/testing_health'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -153,11 +153,11 @@ export interface RootRouteChildren {
   PortfolioRoute: typeof PortfolioRoute
   ProjectIdRoute: typeof ProjectIdRoute
   ProjectAi_assessmentRoute: typeof ProjectAi_assessmentRoute
+  ProjectChattrickRoute: typeof ProjectChattrickRoute
   ProjectKafka_upskillingRoute: typeof ProjectKafka_upskillingRoute
   ProjectNova_bankRoute: typeof ProjectNova_bankRoute
   ProjectPersonal_websiteRoute: typeof ProjectPersonal_websiteRoute
   ProjectResume_builderRoute: typeof ProjectResume_builderRoute
-  ProjectTesting_healthRoute: typeof ProjectTesting_healthRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -181,13 +181,6 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/project/testing_health': {
-      id: '/project/testing_health'
-      path: '/project/testing_health'
-      fullPath: '/project/testing_health'
-      preLoaderRoute: typeof ProjectTesting_healthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/project/resume_builder': {
@@ -218,6 +211,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectKafka_upskillingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/project/chattrick': {
+      id: '/project/chattrick'
+      path: '/project/chattrick'
+      fullPath: '/project/chattrick'
+      preLoaderRoute: typeof ProjectChattrickRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/project/ai_assessment': {
       id: '/project/ai_assessment'
       path: '/project/ai_assessment'
@@ -241,11 +241,11 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRoute,
   ProjectIdRoute: ProjectIdRoute,
   ProjectAi_assessmentRoute: ProjectAi_assessmentRoute,
+  ProjectChattrickRoute: ProjectChattrickRoute,
   ProjectKafka_upskillingRoute: ProjectKafka_upskillingRoute,
   ProjectNova_bankRoute: ProjectNova_bankRoute,
   ProjectPersonal_websiteRoute: ProjectPersonal_websiteRoute,
   ProjectResume_builderRoute: ProjectResume_builderRoute,
-  ProjectTesting_healthRoute: ProjectTesting_healthRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
