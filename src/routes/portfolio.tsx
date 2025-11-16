@@ -4,25 +4,36 @@ import projectsData from '@/assets/projects.yml'
 
 // Define all tags with their categories
 const tagDefinitions = {
-  Technologies: {
-    java: 'Java',
-    springBoot: 'Spring Boot',
-    typeScript: 'JavaScript/TypeScript',
-    react: 'React',
-    apacheKafka: 'Apache Kafka',
-    docker: 'Docker',
-  },
   Domains: {
     backend: 'Backend',
     frontend: 'Frontend',
     database: 'Database',
+    testing: 'Testing',
+    hosting: 'Cloud Hosting',
     restApi: 'REST API',
     ai: 'AI',
     microservices: 'Microservices',
     webDevelopment: 'Web Development',
   },
+  Technologies: {
+    java: 'Java',
+    springBoot: 'Spring Boot',
+    typeScript: 'JavaScript/TypeScript',
+    junit: 'JUnit',
+    playwright: 'Playwright',
+    jest: 'Jest',
+    postgres: 'PostgreSQL',
+    react: 'React',
+    nextJs: 'Next.js',
+    nestJs: 'Nest.js',
+    grafana: 'Grafana',
+    prometheus: 'Prometheus',
+    apacheKafka: 'Apache Kafka',
+    docker: 'Docker',
+  },
   Skills: {
     leadership: 'Leadership',
+    presenting: 'Presenting',
   },
 }
 
