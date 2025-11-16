@@ -9,13 +9,21 @@ function RouteComponent() {
   return <div className='project-page-container'>
     <Project
       name="Personal Website"
-      description="Portfolio + blog with animated hero, filterable projects, and a CSS-variables theme."
-      tech={['TypeScript', 'React', 'TanStack Router', 'Vite', 'TailwindCSS']}
+      description="Welcome to the project behind this very site. A personal project for displaying my work, skills, and experiences as a developer."
+      tech={[
+        'React',
+        'TanStack Router',
+        'TypeScript',
+        'Vite',
+        'TailwindCSS',
+        'fly.io',
+        'DNS Configuration',
+        'Cloudflare'
+      ]}
       highlights={[
-        'Filterable project grid with route-based filtering',
-        'Responsive layout and accessible components',
-        'Theming via CSS variables layered over Tailwind',
-        'Simple CI build & static hosting',
+        'Responsive layout for different screen sizes and devices',
+        'Deployment via fly.io',
+        'DNS Coupled to the danielsandstrom.org Loopia Domain, and managed via Cloudflare'
       ]}
       links={{ github: 'https://github.com/Dansan-Dev/personal-marketing-server' }}
     />

@@ -85,6 +85,8 @@ projects:
       - "JavaScript/TypeScript"
       - "React"
       - "Docker"
+      - "DNS"
+      - "Cloudflare"
   - id: 6
     client: "Witnium"
     title: "Testing & Health Project"
