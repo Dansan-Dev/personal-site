@@ -6,7 +6,7 @@ export type ProjectProps = {
     highlights?: Array<string>
     reflections?: string
     links: {
-      github: string
+      github?: string
       live?: string
       docs?: string
       demo?: string
@@ -65,19 +65,25 @@ export type ProjectProps = {
           )}
   
           {/* Links */}
-          <section aria-labelledby="links-title" className="mt-8">
-            <h2 id="links-title" className="text-sm font-semibold uppercase tracking-wide text-[var(--text-dim)]">Links</h2>
-            <div className="mt-3 flex flex-wrap gap-3">
-              <a className="btn flex items-center gap-2" href={links.github} target="_blank" rel="noreferrer noopener">
-                <img src="/github-mark.png" alt="GitHub logo" className="h-4 w-4" />
-                GitHub
-              </a>
-              {links.live && <a className="btn" href={links.live} target="_blank" rel="noreferrer noopener">App</a>}
-              {links.demo && <a className="btn" href={links.demo} target="_blank" rel="noreferrer noopener">Demo</a>}
-              {links.docs && <a className="btn" href={links.docs} target="_blank" rel="noreferrer noopener">Docs</a>}
-              {links.presentation && <a className="btn" href={links.presentation} target="_blank" rel="noreferrer noopener">Presentation</a>}
-            </div>
-          </section>
+          {
+            (links.github || links.demo || links.docs || links.live || links.presentation) &&
+            <section aria-labelledby="links-title" className="mt-8">
+              <h2 id="links-title" className="text-sm font-semibold uppercase tracking-wide text-[var(--text-dim)]">Links</h2>
+              <div className="mt-3 flex flex-wrap gap-3">
+                {
+                  links.github &&
+                  <a className="btn flex items-center gap-2" href={links.github} target="_blank" rel="noreferrer noopener">
+                    <img src="/github-mark.png" alt="GitHub logo" className="h-4 w-4" />
+                    GitHub
+                  </a>
+                }
+                {links.live && <a className="btn" href={links.live} target="_blank" rel="noreferrer noopener">App</a>}
+                {links.demo && <a className="btn" href={links.demo} target="_blank" rel="noreferrer noopener">Demo</a>}
+                {links.docs && <a className="btn" href={links.docs} target="_blank" rel="noreferrer noopener">Docs</a>}
+                {links.presentation && <a className="btn" href={links.presentation} target="_blank" rel="noreferrer noopener">Presentation</a>}
+              </div>
+            </section>
+          }
         </article>
       </main>
     )

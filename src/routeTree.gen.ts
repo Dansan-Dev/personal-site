@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as CvRouteImport } from './routes/cv'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectTesting_healthRouteImport } from './routes/project/testing_health'
 import { Route as ProjectResume_builderRouteImport } from './routes/project/resume_builder'
 import { Route as ProjectPersonal_websiteRouteImport } from './routes/project/personal_website'
 import { Route as ProjectNova_bankRouteImport } from './routes/project/nova_bank'
@@ -32,6 +33,11 @@ const CvRoute = CvRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectTesting_healthRoute = ProjectTesting_healthRouteImport.update({
+  id: '/project/testing_health',
+  path: '/project/testing_health',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectResume_builderRoute = ProjectResume_builderRouteImport.update({
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
+  '/project/testing_health': typeof ProjectTesting_healthRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
+  '/project/testing_health': typeof ProjectTesting_healthRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
+  '/project/testing_health': typeof ProjectTesting_healthRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
+    | '/project/testing_health'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
+    | '/project/testing_health'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
+    | '/project/testing_health'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -145,6 +157,7 @@ export interface RootRouteChildren {
   ProjectNova_bankRoute: typeof ProjectNova_bankRoute
   ProjectPersonal_websiteRoute: typeof ProjectPersonal_websiteRoute
   ProjectResume_builderRoute: typeof ProjectResume_builderRoute
+  ProjectTesting_healthRoute: typeof ProjectTesting_healthRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -168,6 +181,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/testing_health': {
+      id: '/project/testing_health'
+      path: '/project/testing_health'
+      fullPath: '/project/testing_health'
+      preLoaderRoute: typeof ProjectTesting_healthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/project/resume_builder': {
@@ -225,6 +245,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectNova_bankRoute: ProjectNova_bankRoute,
   ProjectPersonal_websiteRoute: ProjectPersonal_websiteRoute,
   ProjectResume_builderRoute: ProjectResume_builderRoute,
+  ProjectTesting_healthRoute: ProjectTesting_healthRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
