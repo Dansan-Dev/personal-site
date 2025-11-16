@@ -11,7 +11,7 @@ function RouteComponent() {
       name="Nova Bank Platform"
       description="Final project of the 13-week Java Fullstack Program at SALT. A banking solution for a fictional customer with functional and business requirements in areas such as security, scalability and user-friendliness."
       highlights={[
-        'Acted as Project Manager: responsible for meetings and ensuring inter-team communication and collaboration',
+        'Project Manager — responsible for meetings and ensuring inter-team communication and collaboration',
         'Worked as Backend Developer across all layers',
       ]}
       tech={[
