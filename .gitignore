@@ -1,5 +1,7 @@
+fly.toml
 .idea
 plan.md
+
 node_modules
 .DS_Store
 dist

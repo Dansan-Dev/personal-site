@@ -14,7 +14,17 @@ export function Navbar() {
             ? 'active' 
             : ''
           }>Portfolio</Link>
-        <a target="_blank" rel="noreferrer" className='cursor-not-allowed select-none'>Games</a>
+        {import.meta.env.VITE_GAME_GALLERY_URL ? (
+          <a 
+            href={import.meta.env.VITE_GAME_GALLERY_URL} 
+            target="_blank" 
+            rel="noreferrer"
+          >
+            Games
+          </a>
+        ) : (
+          <a target="_blank" rel="noreferrer" className='cursor-not-allowed select-none'>Games</a>
+        )}
       </nav>
     </div>
   )
