@@ -1,5 +1,23 @@
 projects:
   - id: 1
+    client: "Witnium"
+    title: "Chattrick Tests & Health Dashboard"
+    path: "chattrick"
+    desc: "Implemented tests & health dashboard for Chattrick services."
+    tags:
+      - "Backend"
+      - "Frontend"
+      - "Testing"
+      - "JavaScript/TypeScript"
+      - "Next.js"
+      - "Nest.js"
+      - "Playwright"
+      - "Jest"
+      - "Grafana"
+      - "Prometheus"
+      - "Presenting"
+      - "Self-Leadership"
+  - id: 2
     client: "SALT"
     title: "Nova Bank Platform"
     path: "nova_bank"
@@ -15,7 +33,7 @@ projects:
       - "Docker"
       - "Leadership"
       - "Presenting"
-  - id: 2
+  - id: 3
     client: "SALT"
     title: "AI Assessment Tool"
     path: "ai_assessment"
@@ -37,7 +55,7 @@ projects:
       - "Docker"
       - "Leadership"
       - "Presenting"
-  - id: 3
+  - id: 4
     client: "SALT"
     title: "Resume Builder"
     path: "resume_builder"
@@ -56,7 +74,7 @@ projects:
       - "React"
       - "Docker"
       - "Presenting"
-  - id: 4
+  - id: 5
     client: "SALT"
     title: "Apache Kafka Upskilling Project"
     path: "kafka_upskilling"
@@ -73,7 +91,8 @@ projects:
       - "Spring Boot"
       - "PostgreSQL"
       - "Docker"
-  - id: 5
+      - "Self-Leadership"
+  - id: 6
     client: "Private"
     title: "Personal Marketing Website"
     path: "personal_website"
@@ -87,24 +106,6 @@ projects:
       - "Docker"
       - "DNS"
       - "Cloudflare"
-      - "Self-Leadership"
-  - id: 6
-    client: "Witnium"
-    title: "Chattrick Tests & Health Dashboard"
-    path: "chattrick"
-    desc: "Implemented tests & health dashboard for Chattrick services."
-    tags:
-      - "Backend"
-      - "Frontend"
-      - "Testing"
-      - "JavaScript/TypeScript"
-      - "Next.js"
-      - "Nest.js"
-      - "Playwright"
-      - "Jest"
-      - "Grafana"
-      - "Prometheus"
-      - "Presenting"
       - "Self-Leadership"
   - id: 7
     client: "Private"
