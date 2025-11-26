@@ -45,12 +45,12 @@ export const Route = createFileRoute('/portfolio')({
   component: PortfolioPage,
 })
 
-function PortfolioPage() {  
+function PortfolioPage() {
   const [expandedCategories, setExpandedCategories] = useState<Record<string, boolean>>({})
   const isExpanded = (c: string) => expandedCategories[c]
   const toggleCategory = (c: string) =>
     setExpandedCategories((prev) => ({ ...prev, [c]: !prev[c] }))
-  
+
   // Prepare a canonical list of defined tags for normalization
   const definedTags = useMemo(() => {
     return [
@@ -59,7 +59,7 @@ function PortfolioPage() {
       ...Object.values(tagDefinitions.Skills),
     ]
   }, [])
-  
+
   type YamlProject = {
     id: number
     client: string
@@ -68,7 +68,7 @@ function PortfolioPage() {
     desc: string
     tags: Array<string>
   }
-  
+
   const allProjects = useMemo(() => {
     const items = (projectsData?.projects ?? []) as Array<YamlProject>
     // Normalize YAML tags to match our defined tag values (case-insensitive)
@@ -86,7 +86,7 @@ function PortfolioPage() {
 
   const tagCategories = useMemo(() => {
     const allTags = Array.from(new Set(allProjects.flatMap((p) => p.tags)))
-    
+
     // Automatically generate categories from tagDefinitions
     const categorized: Record<string, Array<string>> = {}
     Object.entries(tagDefinitions).forEach(([category, tags]) => {
@@ -95,18 +95,39 @@ function PortfolioPage() {
         categorized[category] = categoryTags.sort()
       }
     })
-    
+
     return categorized
   }, [allProjects])
 
+  const clients = useMemo(() => {
+    const uniqueClients = Array.from(new Set(allProjects.map((p) => p.client).filter(Boolean)))
+    return uniqueClients.sort()
+  }, [allProjects])
+
   const [activeTags, setActiveTags] = useState<Array<string>>([])
+  const [activeClients, setActiveClients] = useState<Array<string>>([])
 
   const toggleTag = (t: string) =>
     setActiveTags((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]))
 
+  const toggleClient = (c: string) =>
+    setActiveClients((prev) => (prev.includes(c) ? prev.filter((x) => x !== c) : [...prev, c]))
+
   const visible = useMemo(
-    () => (activeTags.length ? allProjects.filter((p) => activeTags.every((t) => (p.tags).includes(t))) : allProjects),
-    [activeTags, allProjects],
+    () => {
+      let filtered = allProjects
+
+      if (activeTags.length > 0) {
+        filtered = filtered.filter((p) => activeTags.every((t) => (p.tags).includes(t)))
+      }
+
+      if (activeClients.length > 0) {
+        filtered = filtered.filter((p) => activeClients.includes(p.client))
+      }
+
+      return filtered
+    },
+    [activeTags, activeClients, allProjects],
   )
 
   return (
@@ -117,12 +138,41 @@ function PortfolioPage() {
             <h3>Filter</h3>
             <button
               className="filter-clear"
-              onClick={() => setActiveTags([])}
-              disabled={activeTags.length === 0}
+              onClick={() => {
+                setActiveTags([])
+                setActiveClients([])
+              }}
+              disabled={activeTags.length === 0 && activeClients.length === 0}
             >
               Clear
             </button>
           </div>
+
+          {/* Clients Section */}
+          <div className={`filter-category ${isExpanded('Clients') ? 'open' : ''}`}>
+            <button
+              className="filter-category-title clickable"
+              onClick={() => toggleCategory('Clients')}
+              aria-expanded={isExpanded('Clients')}
+            >
+              <span className="caret">{isExpanded('Clients') ? '▾' : '▸'}</span>
+              Clients
+            </button>
+            {isExpanded('Clients') && (
+              <div className="filter-tags">
+                {clients.map((client) => (
+                  <button
+                    key={client}
+                    className={`filter-tag ${activeClients.includes(client) ? 'active' : ''}`}
+                    onClick={() => toggleClient(client)}
+                  >
+                    {client}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
           {Object.entries(tagCategories).map(([category, tags]) => (
             <div key={category} className={`filter-category ${isExpanded(category) ? 'open' : ''}`}>
               <button
