@@ -93,6 +93,18 @@ projects:
       - "Docker"
       - "Self-Leadership"
   - id: 6
+    client: "SALT"
+    title: "Kubernetes Upskilling Project"
+    path: "kubernetes_upskilling"
+    desc: "Deployed Kafka Project to Kubernetes and held a Kubernetes workshop with lab."
+    tags:
+      - "Backend"
+      - "Kubernetes"
+      - "Apache Kafka"
+      - "Microservices"
+      - "Spring Boot"
+      - "Java"
+  - id: 7
     client: "Private"
     title: "Personal Marketing Website"
     path: "personal_website"
@@ -107,7 +119,7 @@ projects:
       - "DNS"
       - "Cloudflare"
       - "Self-Leadership"
-  - id: 7
+  - id: 8
     client: "Private"
     title: "Game Gallery"
     path: "game_gallery"
@@ -122,7 +134,7 @@ projects:
       - "DNS"
       - "Cloudflare"
       - "Self-Leadership"
-  - id: 8
+  - id: 9
     client: "Private"
     title: "Elderpath Crusade"
     path: "elderpath_crusade"
