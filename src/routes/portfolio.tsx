@@ -31,6 +31,8 @@ const tagDefinitions = {
     prometheus: 'Prometheus',
     apacheKafka: 'Apache Kafka',
     docker: 'Docker',
+    kubernetes: 'Kubernetes',
+    k6: 'K6',
     dns: 'DNS',
     cloudflare: 'Cloudflare',
   },
@@ -38,6 +40,7 @@ const tagDefinitions = {
     leadership: 'Leadership',
     selfLeadership: 'Self-Leadership',
     presenting: 'Presenting',
+    teaching: 'Teaching',
   },
 }
 

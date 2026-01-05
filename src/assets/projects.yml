@@ -104,6 +104,9 @@ projects:
       - "Microservices"
       - "Spring Boot"
       - "Java"
+      - "K6"
+      - "Presenting"
+      - "Teaching"
   - id: 7
     client: "Private"
     title: "Personal Marketing Website"
