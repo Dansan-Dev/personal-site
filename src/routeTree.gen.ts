@@ -15,6 +15,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectResume_builderRouteImport } from './routes/project/resume_builder'
 import { Route as ProjectPersonal_websiteRouteImport } from './routes/project/personal_website'
 import { Route as ProjectNova_bankRouteImport } from './routes/project/nova_bank'
+import { Route as ProjectKubernetes_upskillingRouteImport } from './routes/project/kubernetes_upskilling'
 import { Route as ProjectKafka_upskillingRouteImport } from './routes/project/kafka_upskilling'
 import { Route as ProjectGame_galleryRouteImport } from './routes/project/game_gallery'
 import { Route as ProjectElderpath_crusadeRouteImport } from './routes/project/elderpath_crusade'
@@ -52,6 +53,12 @@ const ProjectNova_bankRoute = ProjectNova_bankRouteImport.update({
   path: '/project/nova_bank',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectKubernetes_upskillingRoute =
+  ProjectKubernetes_upskillingRouteImport.update({
+    id: '/project/kubernetes_upskilling',
+    path: '/project/kubernetes_upskilling',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ProjectKafka_upskillingRoute = ProjectKafka_upskillingRouteImport.update({
   id: '/project/kafka_upskilling',
   path: '/project/kafka_upskilling',
@@ -94,6 +101,7 @@ export interface FileRoutesByFullPath {
   '/project/elderpath_crusade': typeof ProjectElderpath_crusadeRoute
   '/project/game_gallery': typeof ProjectGame_galleryRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
+  '/project/kubernetes_upskilling': typeof ProjectKubernetes_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
@@ -108,6 +116,7 @@ export interface FileRoutesByTo {
   '/project/elderpath_crusade': typeof ProjectElderpath_crusadeRoute
   '/project/game_gallery': typeof ProjectGame_galleryRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
+  '/project/kubernetes_upskilling': typeof ProjectKubernetes_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
@@ -123,6 +132,7 @@ export interface FileRoutesById {
   '/project/elderpath_crusade': typeof ProjectElderpath_crusadeRoute
   '/project/game_gallery': typeof ProjectGame_galleryRoute
   '/project/kafka_upskilling': typeof ProjectKafka_upskillingRoute
+  '/project/kubernetes_upskilling': typeof ProjectKubernetes_upskillingRoute
   '/project/nova_bank': typeof ProjectNova_bankRoute
   '/project/personal_website': typeof ProjectPersonal_websiteRoute
   '/project/resume_builder': typeof ProjectResume_builderRoute
@@ -139,6 +149,7 @@ export interface FileRouteTypes {
     | '/project/elderpath_crusade'
     | '/project/game_gallery'
     | '/project/kafka_upskilling'
+    | '/project/kubernetes_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
@@ -153,6 +164,7 @@ export interface FileRouteTypes {
     | '/project/elderpath_crusade'
     | '/project/game_gallery'
     | '/project/kafka_upskilling'
+    | '/project/kubernetes_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
@@ -167,6 +179,7 @@ export interface FileRouteTypes {
     | '/project/elderpath_crusade'
     | '/project/game_gallery'
     | '/project/kafka_upskilling'
+    | '/project/kubernetes_upskilling'
     | '/project/nova_bank'
     | '/project/personal_website'
     | '/project/resume_builder'
@@ -182,6 +195,7 @@ export interface RootRouteChildren {
   ProjectElderpath_crusadeRoute: typeof ProjectElderpath_crusadeRoute
   ProjectGame_galleryRoute: typeof ProjectGame_galleryRoute
   ProjectKafka_upskillingRoute: typeof ProjectKafka_upskillingRoute
+  ProjectKubernetes_upskillingRoute: typeof ProjectKubernetes_upskillingRoute
   ProjectNova_bankRoute: typeof ProjectNova_bankRoute
   ProjectPersonal_websiteRoute: typeof ProjectPersonal_websiteRoute
   ProjectResume_builderRoute: typeof ProjectResume_builderRoute
@@ -229,6 +243,13 @@ declare module '@tanstack/react-router' {
       path: '/project/nova_bank'
       fullPath: '/project/nova_bank'
       preLoaderRoute: typeof ProjectNova_bankRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/project/kubernetes_upskilling': {
+      id: '/project/kubernetes_upskilling'
+      path: '/project/kubernetes_upskilling'
+      fullPath: '/project/kubernetes_upskilling'
+      preLoaderRoute: typeof ProjectKubernetes_upskillingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/project/kafka_upskilling': {
@@ -286,6 +307,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectElderpath_crusadeRoute: ProjectElderpath_crusadeRoute,
   ProjectGame_galleryRoute: ProjectGame_galleryRoute,
   ProjectKafka_upskillingRoute: ProjectKafka_upskillingRoute,
+  ProjectKubernetes_upskillingRoute: ProjectKubernetes_upskillingRoute,
   ProjectNova_bankRoute: ProjectNova_bankRoute,
   ProjectPersonal_websiteRoute: ProjectPersonal_websiteRoute,
   ProjectResume_builderRoute: ProjectResume_builderRoute,

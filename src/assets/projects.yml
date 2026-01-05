@@ -100,6 +100,7 @@ projects:
     tags:
       - "Backend"
       - "Kubernetes"
+      - "Docker"
       - "Apache Kafka"
       - "Microservices"
       - "Spring Boot"
