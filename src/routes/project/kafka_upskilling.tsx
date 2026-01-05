@@ -25,7 +25,7 @@ function RouteComponent() {
         'Docker',
         'ReactJS',
       ]}
-      reflections={`A hands-on introduction to Kafka architecture and microservices. Strengthened team and inter-team collaboration, as well as technical problem-solving skills in a team environment.`}
+      reflections={`A hands-on introduction to Kafka architecture and microservices. Strengthened my team and inter-team collaboration skills, as well as technical problem-solving skills in a team environment.`}
       links={{
         github: 'https://github.com/saltsthlm/restaurant-order-service',
       }}
