@@ -19,7 +19,7 @@ export function Navbar() {
           <a
             href={import.meta.env.VITE_GAME_GALLERY_URL}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener"
             className="flex items-center gap-[8px]"
           >
             Games

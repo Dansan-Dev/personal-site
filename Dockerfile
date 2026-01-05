@@ -1,6 +1,7 @@
 # ---------- Build stage ----------
 FROM node:20-alpine AS build
 WORKDIR /app
+ARG VITE_GAME_GALLERY_URL
 
 # Copy package files first for caching dependencies
 COPY package*.json ./
