@@ -25,11 +25,5 @@ export const Route = createRootRoute({
       </>
     )
   },
-  notFoundComponent: () => (
-    <>
-      <CanonicalTag />
-      <Navbar />
-      <NotFound />
-    </>
-  ),
+  notFoundComponent: () => <NotFound />,
 })
