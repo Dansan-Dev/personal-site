@@ -351,7 +351,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
 .filter-category {
@@ -393,7 +393,7 @@ body {
 }
 
 .filter-sort-dropdown {
-  margin-bottom: 16px;
+  margin-bottom: 28px;
 }
 
 .sort-select {
@@ -419,8 +419,8 @@ body {
 
 .sort-select:focus {
   outline: none;
-  border-color: var(--color-main-light);
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: none;
 }
 
 .sort-select option {
@@ -715,6 +715,19 @@ body {
   .filter-tag {
     width: 200px;
   }
+
+  .filter-sort-dropdown {
+    max-width: 240px;
+    /* Slightly narrower to feel more balanced */
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .filter-category-title.no-caret {
+    text-align: left;
+    margin-left: 4px;
+    /* Slight offset for better optical alignment */
+  }
 }
 
 @media (max-width: 1024px) {
@@ -831,6 +844,12 @@ body {
   :root {
     --nav-h: 64px;
     --bubble-size: 32px;
+  }
+
+  .filter-sort-dropdown {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   /* Lock viewport and prevent scroll on mobile */
