@@ -69,6 +69,8 @@ function PortfolioPage() {
     title: string
     path: string
     desc: string
+    highlight: number
+    date: string
     tags: Array<string>
   }
 
@@ -109,6 +111,7 @@ function PortfolioPage() {
 
   const [activeTags, setActiveTags] = useState<Array<string>>([])
   const [activeClients, setActiveClients] = useState<Array<string>>([])
+  const [sortBy, setSortBy] = useState<'highlight' | 'client' | 'date'>('highlight')
 
   const toggleTag = (t: string) =>
     setActiveTags((prev) => (prev.includes(t) ? prev.filter((x) => x !== t) : [...prev, t]))
@@ -128,9 +131,23 @@ function PortfolioPage() {
         filtered = filtered.filter((p) => activeClients.includes(p.client))
       }
 
-      return filtered
+      // Sort the filtered results
+      return [...filtered].sort((a, b) => {
+        if (sortBy === 'highlight') {
+          return a.highlight - b.highlight
+        }
+        if (sortBy === 'client') {
+          return (b.client || '').localeCompare(a.client || '')
+        }
+        if (sortBy === 'date') {
+          const dateA = a.date === 'Ongoing' ? Infinity : new Date(a.date).getTime()
+          const dateB = b.date === 'Ongoing' ? Infinity : new Date(b.date).getTime()
+          return dateB - dateA
+        }
+        return 0
+      })
     },
-    [activeTags, activeClients, allProjects],
+    [activeTags, activeClients, allProjects, sortBy],
   )
 
   return (
@@ -144,11 +161,29 @@ function PortfolioPage() {
               onClick={() => {
                 setActiveTags([])
                 setActiveClients([])
+                setSortBy('highlight')
               }}
-              disabled={activeTags.length === 0 && activeClients.length === 0}
+              disabled={activeTags.length === 0 && activeClients.length === 0 && sortBy === 'highlight'}
             >
               Clear
             </button>
+          </div>
+
+          <div className="filter-category open">
+            <div className="filter-category-title no-caret">
+              Sort By
+            </div>
+            <div className="filter-sort-dropdown">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as any)}
+                className="sort-select"
+              >
+                <option value="highlight">Highlighted Projects</option>
+                <option value="client">Client</option>
+                <option value="date">Date</option>
+              </select>
+            </div>
           </div>
 
           {/* Clients Section */}

@@ -4,6 +4,8 @@ projects:
     title: "Chattrick Tests & Health Dashboard"
     path: "chattrick"
     desc: "Implemented tests & health dashboard for Chattrick services."
+    highlight: 1
+    date: "2025-11-14"
     tags:
       - "Backend"
       - "Frontend"
@@ -22,6 +24,8 @@ projects:
     title: "Nova Bank Platform"
     path: "nova_bank"
     desc: "Full-stack banking app built as SALT’s final project."
+    highlight: 2
+    date: "2025-06-27"
     tags:
       - "Backend"
       - "Database"
@@ -38,6 +42,8 @@ projects:
     title: "AI Assessment Tool"
     path: "ai_assessment"
     desc: "Form builder and management tool for assessing AI maturity."
+    highlight: 6
+    date: "2025-08-22"
     tags:
       - "Backend"
       - "Database"
@@ -60,6 +66,8 @@ projects:
     title: "Resume Builder"
     path: "resume_builder"
     desc: "AI-powered CV builder with versioning, LinkedIn import, and theme customization."
+    highlight: 3
+    date: "2025-10-07"
     tags:
       - "Backend"
       - "Frontend"
@@ -79,6 +87,8 @@ projects:
     title: "Apache Kafka Upskilling Project"
     path: "kafka_upskilling"
     desc: "Kafka-based microservice system for managing restaurant orders and workflows."
+    highlight: 5
+    date: "2025-09-15"
     tags:
       - "Backend"
       - "Database"
@@ -97,6 +107,8 @@ projects:
     title: "Kubernetes Upskilling Project"
     path: "kubernetes_upskilling"
     desc: "Deployed Kafka Project to Kubernetes and held a Kubernetes workshop with lab."
+    highlight: 4
+    date: "2025-12-19"
     tags:
       - "Backend"
       - "Kubernetes"
@@ -113,6 +125,8 @@ projects:
     title: "Personal Marketing Website"
     path: "personal_website"
     desc: "My portfolio site built with React, TanStack, and Tailwind."
+    highlight: 9
+    date: "Ongoing"
     tags:
       - "Frontend"
       - "Web Development"
@@ -128,6 +142,8 @@ projects:
     title: "Game Gallery"
     path: "game_gallery"
     desc: "A site for browsing and installing my games."
+    highlight: 10
+    date: "Ongoing"
     tags:
       - "Frontend"
       - "Web Development"
@@ -143,6 +159,8 @@ projects:
     title: "Elderpath Crusade"
     path: "elderpath_crusade"
     desc: "A game demo built with Java LibGDX and ported to Windows, Linux, and Mac."
+    highlight: 6
+    date: "2025-11-24"
     tags:
       - "Game Development"
       - "Java"
