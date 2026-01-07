@@ -137,12 +137,16 @@ function PortfolioPage() {
           return a.highlight - b.highlight
         }
         if (sortBy === 'client') {
-          return (b.client || '').localeCompare(a.client || '')
+          const cmp = (b.client || '').localeCompare(a.client || '')
+          if (cmp !== 0) return cmp
+          return a.highlight - b.highlight
         }
         if (sortBy === 'date') {
           const dateA = a.date === 'Ongoing' ? Infinity : new Date(a.date).getTime()
           const dateB = b.date === 'Ongoing' ? Infinity : new Date(b.date).getTime()
-          return dateB - dateA
+          const cmp = dateB - dateA
+          if (cmp !== 0) return cmp
+          return a.highlight - b.highlight
         }
         return 0
       })
