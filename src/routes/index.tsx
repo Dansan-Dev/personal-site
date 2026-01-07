@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useState } from 'react'
 import { SocialBubbles } from '../components/SocialBubbles'
+import { WorkStatus } from '../components/WorkStatus'
 
 export const Route = createFileRoute('/')({
   component: App,
@@ -29,13 +30,16 @@ function App() {
           <h1 className="home-title">{name}</h1>
           <h2 className="home-subtitle">{title}</h2>
           <p className="home-desc">{description}</p>
-          <SocialBubbles
-            links={[
-              { title: 'LinkedIn', href: 'https://www.linkedin.com/in/daniel-sandstr%C3%B6m-449874316/', iconSrc: '/linkedin_icon.svg' },
-              { title: 'GitHub', href: 'https://github.com/Dansan-Dev', iconSrc: '/github-mark.png'},
-              { title: 'Email', href: 'mailto:work@danielsandstrom.org', iconSrc: '/mail_icon.svg' },
-            ]}
-          />
+          <div className="home-actions">
+            <SocialBubbles
+              links={[
+                { title: 'LinkedIn', href: 'https://www.linkedin.com/in/daniel-sandstr%C3%B6m-449874316/', iconSrc: '/linkedin_icon.svg' },
+                { title: 'GitHub', href: 'https://github.com/Dansan-Dev', iconSrc: '/github-mark.png' },
+                { title: 'Email', href: 'mailto:work@danielsandstrom.org', iconSrc: '/mail_icon.svg' },
+              ]}
+            />
+            <WorkStatus status="consultant" />
+          </div>
         </section>
         <section className="carousel-container">
           <div className="carousel">

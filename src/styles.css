@@ -233,7 +233,7 @@ body {
   padding: 22px 22px;
   box-shadow: 0 4px 24px var(--color-home-text-box-shadow);
   width: 100%;
-  max-width: 640px;
+  max-width: 600px;
   /* keep readable measure while centered */
 }
 
@@ -281,7 +281,78 @@ body {
 .social-row {
   display: flex;
   gap: 12px;
+}
+
+/* Work Status Pill */
+.home-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
   margin-top: 14px;
+}
+
+.work-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: var(--color-white-glass);
+  border: 1px solid var(--color-border-dark);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  width: fit-content;
+  margin-right: 20px;
+}
+
+.work-status-pill:hover {
+  background: var(--color-white-glass-strong);
+  transform: translateY(-1px);
+}
+
+.work-status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.work-status-indicator::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  animation: pulse-indicator 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  opacity: 0.7;
+}
+
+@keyframes pulse-indicator {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.work-status-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-light);
+  letter-spacing: 0.3px;
 }
 
 .bubble {
