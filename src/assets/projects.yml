@@ -42,7 +42,7 @@ projects:
     title: "AI Assessment Tool"
     path: "ai_assessment"
     desc: "Form builder and management tool for assessing AI maturity."
-    highlight: 6
+    highlight: 8
     date: "2025-08-22"
     tags:
       - "Backend"
@@ -125,7 +125,7 @@ projects:
     title: "Personal Marketing Website"
     path: "personal_website"
     desc: "My portfolio site built with React, TanStack, and Tailwind."
-    highlight: 9
+    highlight: 7
     date: "Ongoing"
     tags:
       - "Frontend"
