@@ -24,7 +24,7 @@ const tagDefinitions = {
     playwright: 'Playwright',
     jest: 'Jest',
     postgres: 'PostgreSQL',
-    react: 'React',
+    react: 'React.js',
     nextJs: 'Next.js',
     nestJs: 'Nest.js',
     grafana: 'Grafana',

@@ -16,7 +16,7 @@ function RouteComponent() {
         'Contributed across the whole codebase',
       ]}
       tech={[
-        'React',
+        'React.js',
         'TanStack Router & Query',
         'Spring Boot',
         'Docker',

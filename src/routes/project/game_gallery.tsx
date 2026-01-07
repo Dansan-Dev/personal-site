@@ -11,7 +11,7 @@ function RouteComponent() {
       name="Game Gallery"
       description="A site for browsing and installing my games."
       tech={[
-        'React',
+        'React.js',
         'TypeScript',
         'TanStack Router',
         'TailwindCSS',

@@ -18,7 +18,7 @@ function RouteComponent() {
         'Spring Boot',
         'PostgreSQL',
         'Supabase',
-        'ReactJS',
+        'React.js',
         'TanStack Router & Query',
         'Clerk',
         'Docker',

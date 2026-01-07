@@ -23,7 +23,7 @@ function RouteComponent() {
         'JUnit',
         'Postgres',
         'Docker',
-        'ReactJS',
+        'React.js',
       ]}
       reflections={`A hands-on introduction to Kafka architecture and microservices. Strengthened my team and inter-team collaboration skills, as well as technical problem-solving skills in a team environment.`}
       links={{

@@ -11,7 +11,7 @@ function RouteComponent() {
       name="Personal Website"
       description="Welcome to the project behind this very site. A personal project for displaying my work, skills, and experiences as a developer."
       tech={[
-        'React',
+        'React.js',
         'TanStack Router',
         'TypeScript',
         'Vite',
