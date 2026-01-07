@@ -25,7 +25,7 @@ function RouteComponent() {
           'Docker',
           'Java'
         ]}
-        reflections={`Deploying an older Kafka-based microservice system into Kubernetes gave great insight on how to structure and deploy real projects. In addition, preparing the workshop lab was an exercise in putting myself in the shoes of someone new to Kubernetes and designing their learning journey in a pedagogical way.`}
+        reflections={`Deploying an older Kafka-based microservice system to Kubernetes gave great insight on how to structure and deploy real projects. In addition, preparing the workshop lab was an exercise in putting myself in the shoes of someone new to Kubernetes and designing their learning journey in a pedagogical way.`}
         links={{
           extra: [
             {
