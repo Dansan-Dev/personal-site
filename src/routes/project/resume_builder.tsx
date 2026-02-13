@@ -26,7 +26,7 @@ function RouteComponent() {
       reflections={`It was good experience as a Product Lead, to work together with the team to form a vision on what is or is not vital to the product. This project also deepened my understanding of AI in development. It taught me how to balance AI assistance with manual coding, and how good prompting and rule documents increase development speed and code quality for AI.`}
       links={{
         github: 'https://github.com/salt-community/json2resume/',
-        live: 'https://frontend-proud-butterfly-9919.fly.dev/',
+        live: 'https://json-2-resume.fly.dev/',
       }}
     />
   </div>
