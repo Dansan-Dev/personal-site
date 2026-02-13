@@ -38,7 +38,7 @@ function App() {
                 { title: 'Email', href: 'mailto:work@danielsandstrom.org', iconSrc: '/mail_icon.svg' },
               ]}
             />
-            <WorkStatus status="consultant" />
+            <WorkStatus status="open" />
           </div>
         </section>
         <section className="carousel-container">
